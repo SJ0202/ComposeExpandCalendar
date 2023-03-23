@@ -33,7 +33,7 @@ fun ExpandCalendar(
     val dayList: List<String> = listOf("일", "월", "화", "수", "목", "금", "토")
 
     val monthCalendar = LocalDate.of(date.year, date.monthValue, 1)
-    val weekOfMonthValue = monthCalendar.get(WeekFields.SUNDAY_START.weekOfMonth())
+    val weekOfMonthValue = date.get(WeekFields.SUNDAY_START.weekOfMonth())
     val weekOfMonth = (1-monthCalendar.dayOfWeek.value..monthCalendar.lengthOfMonth()).chunked(
         size = 7,
         transform = {
